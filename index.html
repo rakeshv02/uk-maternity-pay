@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>UK Maternity Pay Calculator 2024 – SMP & Maternity Allowance | Tabutility</title>
+  <title>UK Maternity Pay Calculator 2025 – SMP & Maternity Allowance | Tabutility</title>
   <meta name="description" content="Free UK maternity pay calculator. Calculate Statutory Maternity Pay (SMP), total maternity income, return to work date and full weekly breakdown for 2024/25." />
   <meta name="keywords" content="maternity pay calculator UK, SMP calculator, statutory maternity pay, maternity allowance calculator, maternity leave pay 2024" />
   <link rel="canonical" href="https://uk-maternity-pay.tabutility.com/" />
@@ -20,9 +20,10 @@
   <div id="root"></div>
   <div id="ad-bottom"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7039091592734005" data-ad-slot="auto" data-ad-format="rectangle" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div>
   <script type="text/babel">
+    //<![CDATA[
     const { useState } = React;
 
-    const SMP_FLAT_RATE = 184.03; // 2024/25
+    const SMP_FLAT_RATE = 194.32; // 2025/26 — source: gov.uk
     const SMP_WEEKS = 39;
     const HIGHER_RATE_WEEKS = 6;
     const FLAT_RATE_WEEKS = 33;
@@ -39,7 +40,7 @@
 
     function App() {
       const [weeklyPay, setWeeklyPay] = useState("600");
-      const [startDate, setStartDate] = useState("2024-09-01");
+      const [startDate, setStartDate] = useState("2025-09-01");
       const [additionalOccupational, setAdditionalOccupational] = useState("0");
       const [leaveWeeks, setLeaveWeeks] = useState("52");
       const [result, setResult] = useState(null);
@@ -216,6 +217,7 @@
     }
     const root = ReactDOM.createRoot(document.getElementById('root'));
     root.render(<App />);
+    //]]>
   </script>
 </body>
 </html>
