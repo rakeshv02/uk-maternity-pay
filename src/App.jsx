@@ -1,6 +1,7 @@
 const { useState } = React;
 
-const SMP_FLAT_RATE = 184.03;
+// Source: gov.uk — SMP flat rate from April 2025
+const SMP_FLAT_RATE = 194.32;
 const fmt = n => "£" + n.toFixed(2);
 const fmtK = n => "£" + Math.round(n).toLocaleString();
 const fmtDate = d => new Date(d).toLocaleDateString("en-GB", { day:"numeric", month:"long", year:"numeric" });
@@ -8,7 +9,7 @@ function addWeeks(date, weeks) { const d=new Date(date); d.setDate(d.getDate()+w
 
 export default function UKMaternityPay() {
   const [weeklyPay,setWeeklyPay]=useState("600");
-  const [startDate,setStartDate]=useState("2024-09-01");
+  const [startDate,setStartDate]=useState("2025-09-01");
   const [additionalOcc,setAdditionalOcc]=useState("0");
   const [leaveWeeks,setLeaveWeeks]=useState("52");
   const [result,setResult]=useState(null);
@@ -37,7 +38,7 @@ export default function UKMaternityPay() {
         <div style={{textAlign:"center",marginBottom:32}}>
           <div style={{fontSize:48,marginBottom:8}}>🤱</div>
           <h1 style={{margin:0,fontSize:32,fontWeight:800,color:"#1a1a2e"}}>UK Maternity Pay Calculator</h1>
-          <p style={{margin:"8px 0 0",color:"#555",fontSize:16}}>Statutory Maternity Pay (SMP) — 2024/25 rates</p>
+          <p style={{margin:"8px 0 0",color:"#555",fontSize:16}}>Statutory Maternity Pay (SMP) — £194.32/week from April 2025</p>
         </div>
 
         <div style={{background:"#fff",borderRadius:16,padding:28,boxShadow:"0 4px 24px rgba(0,0,0,0.08)",marginBottom:24}}>
@@ -85,7 +86,7 @@ export default function UKMaternityPay() {
               {[
                 {label:"Avg Weekly Earnings",value:fmt(result.awe)},
                 {label:"Wks 1–6 (90% AWE)",value:`${fmt(result.higher6)}/wk`,color:"#059669"},
-                {label:"Wks 7–39 (flat rate)",value:`${fmt(result.flat33)}/wk`,color:"#d97706"},
+                {label:`Wks 7–39 (flat rate £194.32)`,value:`${fmt(result.flat33)}/wk`,color:"#d97706"},
                 {label:"SMP Weeks 1–6",value:fmtK(result.smpHigher),color:"#db2777"},
                 {label:"SMP Weeks 7–39",value:fmtK(result.smpFlat),color:"#db2777"},
                 {label:"Total SMP",value:fmtK(result.totalSMP),bold:true,color:"#db2777"},
@@ -112,7 +113,7 @@ export default function UKMaternityPay() {
               ))}
               <div style={{marginTop:16,padding:14,background:"#fdf2f8",borderRadius:10}}>
                 <div style={{fontSize:13,fontWeight:600,color:"#db2777",marginBottom:6}}>SMP Eligibility</div>
-                {["Employed 26+ weeks before qualifying week","Earning ≥£123/week (LEL)","Proper notice given to employer"].map((item,i)=>(
+                {["Employed 26+ weeks before qualifying week","Earning ≥£125/week (LEL 2025/26)","Proper notice given to employer"].map((item,i)=>(
                   <div key={i} style={{fontSize:12,color:"#555",marginBottom:3}}>✅ {item}</div>
                 ))}
               </div>
