@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://uk-maternity-pay.tabutility.com/sitemap.xml
